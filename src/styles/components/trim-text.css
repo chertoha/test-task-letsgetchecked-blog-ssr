@@ -1,0 +1,50 @@
+.trim-text-one-row {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.trim-text-two-row {
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.trim-text-three-row {
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.trim-text-four-row {
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.trim-text-five-row {
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.trim-text-six-row {
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
