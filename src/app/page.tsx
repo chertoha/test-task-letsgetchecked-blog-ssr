@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 export default function Home() {
-  const abc = "test";
+  // const abc = "test";
 
-  function fn(a: any, b: any) {
-    console.log("");
-  }
+  // function fn(a: any, b: any) {
+  //   console.log("");
+  // }
 
   return (
     <div>
