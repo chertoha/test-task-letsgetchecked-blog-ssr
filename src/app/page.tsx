@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 export default function Home() {
-  const _abc = "test";
+  const abc = "test";
 
-  function _fn(_a: any, _b: any) {
+  function fn(a: any, b: any) {
     console.log("");
   }
 
