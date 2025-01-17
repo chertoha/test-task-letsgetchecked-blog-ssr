@@ -10,3 +10,10 @@ body {
   background-color: #f7f8ff;
   color: #171717;
 }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

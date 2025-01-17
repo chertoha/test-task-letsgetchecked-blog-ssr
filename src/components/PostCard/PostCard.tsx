@@ -7,17 +7,20 @@ interface IProps {
   post: PostType;
 }
 
-const PostCard: FC<IProps> = ({
-  post: { id, slug, title, publish_date, description, author, content },
-}) => {
+const PostCard: FC<IProps> = ({ post: { slug, title, publish_date, description, author } }) => {
   return (
     <>
-      <article>
-        <h2>{title}</h2>
-        <p>{publish_date}</p>
-        <p>{description}</p>
-        <p>{author}</p>
-        <Link href={ROUTES.POSTS + "/" + slug}>View More</Link>
+      <article className="border-b border-gray-300 py-5">
+        <div className="flex justify-between items-center">
+          <p className="text-gray-400 text-sm">{publish_date}</p>
+          <p className="text-gray-800 text-sm underline">{author}</p>
+        </div>
+
+        <h2 className="text-2xl font-bold">{title}</h2>
+
+        <p className="pt-3 text-gray-500">{description}</p>
+
+        <Link href={ROUTES.POSTS + "/" + slug}>View more</Link>
       </article>
     </>
   );

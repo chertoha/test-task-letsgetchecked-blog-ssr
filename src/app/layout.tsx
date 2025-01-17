@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${opensans.variable} antialiased`}>
-        <main>{children}</main>
+        <main className="pt-24">{children}</main>
       </body>
     </html>
   );
