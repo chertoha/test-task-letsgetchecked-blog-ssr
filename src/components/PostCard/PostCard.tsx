@@ -16,11 +16,15 @@ const PostCard: FC<IProps> = ({ post: { slug, title, publish_date, description, 
           <p className="text-gray-800 text-sm underline">{author}</p>
         </div>
 
-        <h2 className="text-2xl font-bold">{title}</h2>
+        <h2 className="text-2xl font-bold mt-4">{title}</h2>
 
         <p className="pt-3 text-gray-500">{description}</p>
 
-        <Link href={ROUTES.POSTS + "/" + slug}>View more</Link>
+        <div className="mt-2 md:mt-3 flex justify-end">
+          <Link href={ROUTES.POSTS + "/" + slug} className="submit">
+            View more
+          </Link>
+        </div>
       </article>
     </>
   );

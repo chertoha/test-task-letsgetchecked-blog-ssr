@@ -23,7 +23,7 @@ const Home: FC<IProps> = async ({ searchParams }) => {
     },
   });
 
-  // const totalCount = response?.headers.get("x-total-count");
+  const totalCount = response?.headers.get("x-total-count");
 
   if (Number.isNaN(Number(totalCount))) return <>Something went wrong</>;
 
