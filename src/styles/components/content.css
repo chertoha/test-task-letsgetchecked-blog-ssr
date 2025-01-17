@@ -1,0 +1,19 @@
+/* .content section {
+ @apply my-4;
+}
+
+.content h2 {
+ @apply text-2xl font-bold text-gray-600 mt-5 mb-2;
+}
+
+.content p {
+ @apply my-2;
+}
+
+.content a {
+ @apply underline hover:no-underline transition-all ease-in-out duration-300;
+}
+
+.content ul {
+ @apply list-disc list-inside my-2;
+} */

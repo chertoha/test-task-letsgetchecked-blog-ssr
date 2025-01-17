@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./components/index.css";
+
+body {
+  font-family: var(--font-opensans), monospace;
+  font-weight: 400;
+  background-color: #f7f8ff;
+  color: #171717;
+}
