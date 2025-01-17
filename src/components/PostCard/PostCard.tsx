@@ -7,9 +7,7 @@ interface IProps {
   post: PostType;
 }
 
-const PostCard: FC<IProps> = ({
-  post: { id, slug, title, publish_date, description, author, content },
-}) => {
+const PostCard: FC<IProps> = ({ post: { slug, title, publish_date, description, author } }) => {
   return (
     <>
       <article>

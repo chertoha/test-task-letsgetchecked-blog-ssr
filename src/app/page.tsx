@@ -21,7 +21,7 @@ const Home: FC<IProps> = async ({ searchParams }) => {
     },
   });
 
-  const totalCount = response?.headers.get("x-total-count");
+  // const totalCount = response?.headers.get("x-total-count");
 
   return (
     <>
