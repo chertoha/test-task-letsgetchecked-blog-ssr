@@ -5,3 +5,11 @@
 .submit {
   @apply border bg-green-600 px-4 py-1 rounded-md text-white hover:bg-green-500 transition-colors duration-300 ease-in-out;
 }
+
+.input {
+  @apply block w-full py-2 px-3 border border-gray-300 rounded-md text-sm focus-visible:outline-green-600;
+}
+
+.toolbar-icon {
+  @apply text-gray-300 hover:text-red-500 transition-colors duration-300 ease-in-out;
+}

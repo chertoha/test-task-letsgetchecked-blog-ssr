@@ -13,9 +13,9 @@ const CommentList: FC<IProps> = async ({ postId }) => {
       _sort: "date",
       _order: "desc",
     },
+    next: { tags: ["comments"] },
   });
 
-  console.log(response);
   if (!response) return null;
 
   return (
