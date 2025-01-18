@@ -44,6 +44,7 @@ const Paginator: FC<IPaginatorProps> = ({
                 type === BUTTON_TYPE.CURRENT && "font-bold"
               }`}
               href={{ pathname: route, query: { ...params, page: value } }}
+              aria-label={`Page ${value}`}
             >
               {title}
               {Icon && <Icon />}

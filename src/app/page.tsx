@@ -32,21 +32,23 @@ const Home: FC<IProps> = async ({ searchParams }) => {
       <Container>
         <h1>Home</h1>
 
-        {response?.data && (
-          <>
-            <PostList list={response.data} />
+        <section>
+          {response?.data && (
+            <>
+              <PostList list={response.data} />
 
-            <div className="mt-10">
-              <Paginator
-                route={ROUTES.HOME}
-                currentPage={Number(page)}
-                perPage={API_REQUEST_DEFAULT_LIMIT}
-                totalItems={Number(totalCount)}
-                nearbyQtyPages={1}
-              />
-            </div>
-          </>
-        )}
+              <div className="mt-10">
+                <Paginator
+                  route={ROUTES.HOME}
+                  currentPage={Number(page)}
+                  perPage={API_REQUEST_DEFAULT_LIMIT}
+                  totalItems={Number(totalCount)}
+                  nearbyQtyPages={1}
+                />
+              </div>
+            </>
+          )}
+        </section>
       </Container>
     </>
   );
