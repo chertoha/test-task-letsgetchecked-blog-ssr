@@ -17,7 +17,7 @@ export const deleteCommentAction = async (id: number): Promise<DeleteCommentActi
     revalidateTag("comments");
 
     return { status: "success", message: "Comment successfully removed." };
-  } catch (error) {
+  } catch (_error) {
     return { status: "error", message: "Something went wrong!" };
   }
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import { EditCommentFormValues } from "@/types/forms";
-import { Formik, FormikHelpers } from "formik";
+import { Formik } from "formik";
 import { FC, useTransition } from "react";
 import Field from "../UIKit/Field";
 import SymbolCounter from "../UIKit/SymbolCounter";

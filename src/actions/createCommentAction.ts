@@ -23,7 +23,7 @@ export const createCommentAction = async (
     revalidateTag("comments");
 
     return { status: "success", message: "Comment successfully created." };
-  } catch (error) {
+  } catch (_error) {
     return { status: "error", message: "Something went wrong!" };
   }
 };

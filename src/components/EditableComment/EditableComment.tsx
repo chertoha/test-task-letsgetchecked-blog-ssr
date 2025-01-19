@@ -1,7 +1,6 @@
 "use client";
 
 import { FC, useState } from "react";
-import { MdDeleteOutline } from "react-icons/md";
 import { MdOutlineEdit } from "react-icons/md";
 import EditCommentForm from "../EditCommentForm";
 import DeleteCommentButton from "../DeleteCommentButton";
