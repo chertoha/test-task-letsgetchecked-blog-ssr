@@ -1,0 +1,11 @@
+.paginator-list {
+  @apply flex w-full justify-center gap-x-2;
+}
+
+.paginator-list-item {
+  @apply h-[40px] w-[30px] md:h-[50px]  md:w-[50px];
+}
+
+.paginator-page-link {
+  @apply flex items-center justify-center h-full shrink-0 bg-transparent transition-colors duration-300 xl:text-xl xl:leading-normal;
+}

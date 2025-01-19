@@ -7,3 +7,12 @@ export type PostType = {
   description: string;
   content: string;
 };
+
+export type CommentType = {
+  id: number;
+  postId: number;
+  parent_id: number | null;
+  user: string;
+  date: string;
+  content: string;
+};

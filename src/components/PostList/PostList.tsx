@@ -9,7 +9,7 @@ interface IProps {
 const PostList: FC<IProps> = ({ list }) => {
   return (
     <>
-      <ul>
+      <ul className="">
         {list.map(post => (
           <li key={post.id}>
             <PostCard post={post} />

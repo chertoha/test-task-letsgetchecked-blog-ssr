@@ -1,3 +1,19 @@
 .container-default {
-  @apply mx-auto px-5 md:px-8 xl:px-20;
+  @apply mx-auto px-5  md:px-12 xl:px-36;
+}
+
+.submit {
+  @apply border bg-green-600 px-4 py-1 rounded-md text-white hover:bg-green-500 transition-colors duration-300 ease-in-out;
+}
+
+.cancel {
+  @apply border border-red-600 px-4 py-1 rounded-md text-red-600  hover:bg-red-500 hover:text-white transition-colors duration-300 ease-in-out;
+}
+
+.input {
+  @apply block w-full py-2 px-3 border border-gray-300 rounded-md text-sm focus-visible:outline-green-600;
+}
+
+.toolbar-icon {
+  @apply text-gray-200 hover:text-red-500 transition-colors duration-300 ease-in-out;
 }

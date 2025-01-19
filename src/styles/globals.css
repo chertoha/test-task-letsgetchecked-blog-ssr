@@ -10,3 +10,24 @@ body {
   background-color: #f7f8ff;
   color: #171717;
 }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+*:focus {
+  outline-color: rgb(0, 0, 0);
+}
+
+*::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #16a34a;
+  border-radius: 2px;
+}
