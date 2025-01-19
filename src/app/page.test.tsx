@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import Page from "../app/page";
-import { act, Suspense } from "react";
+import { Suspense } from "react";
 
 jest.mock("../helpers/basicFetch", () => ({
   basicFetch: jest.fn(() =>
@@ -22,10 +22,11 @@ jest.mock("../helpers/basicFetch", () => ({
   ),
 }));
 
-describe("Page", () => {
+describe("Home Page", () => {
   it("renders a heading", async () => {
     const searchParams = Promise.resolve({ page: "1" });
-    await act(() =>
+
+    await act(async () =>
       render(
         <Suspense>
           <Page searchParams={searchParams} />,
@@ -33,7 +34,14 @@ describe("Page", () => {
       ),
     );
 
-    const heading = screen.getByRole("heading", { level: 1 });
+    // render(
+    //   <Suspense>
+    //     <Page searchParams={searchParams} />,
+    //   </Suspense>,
+    // );
+
+    // const heading = screen.getByRole("heading", { level: 1 });
+    const heading = await screen.findByRole("heading", { level: 1 });
     expect(heading).toBeInTheDocument();
   });
 });
