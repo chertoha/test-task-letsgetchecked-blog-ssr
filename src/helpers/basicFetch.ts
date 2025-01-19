@@ -45,8 +45,6 @@ export const basicFetch = async <T>(
     return Promise.resolve(undefined);
   }
 
-  // return response.json() as T;
-
   const data = (await response.json()) as T;
   return { headers: response.headers, data };
 };

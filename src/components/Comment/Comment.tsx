@@ -1,9 +1,7 @@
 import { CommentType } from "@/types/entities";
 import { dateToString, isToday } from "@/utils/datetime";
 import { FC } from "react";
-import { MdDeleteOutline } from "react-icons/md";
-import { MdOutlineEdit } from "react-icons/md";
-import EditCommentField from "../EditCommentField";
+import EditableComment from "../EditableComment";
 
 interface IProps {
   comment: CommentType;
@@ -26,19 +24,7 @@ const Comment: FC<IProps> = ({ comment: { id, user, content, date } }) => {
       </footer>
 
       <div className="xs:flex  gap-4 justify-between items-start mt-1">
-        <EditCommentField content={content} commentId={id} />
-        {/* <p>{content}</p>
-
-        <div className="w-12 shrink-0">
-          <div className="flex items-center max-xs:gap-3 gap-2 max-xs:mt-3">
-            <button type="button" aria-label="Update comment" className="toolbar-icon">
-              <MdOutlineEdit size={20} />
-            </button>
-            <button type="button" aria-label="Delete comment" className="toolbar-icon">
-              <MdDeleteOutline size={20} />
-            </button>
-          </div>
-        </div> */}
+        <EditableComment content={content} commentId={id} />
       </div>
     </article>
   );

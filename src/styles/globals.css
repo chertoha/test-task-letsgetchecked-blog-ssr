@@ -21,3 +21,13 @@ li {
 *:focus {
   outline-color: rgb(0, 0, 0);
 }
+
+*::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #16a34a;
+  border-radius: 2px;
+}
