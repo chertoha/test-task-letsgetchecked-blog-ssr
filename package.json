@@ -12,6 +12,7 @@
   "dependencies": {
     "formik": "^2.4.6",
     "html-react-parser": "^5.2.2",
+    "nanoid": "^5.0.9",
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

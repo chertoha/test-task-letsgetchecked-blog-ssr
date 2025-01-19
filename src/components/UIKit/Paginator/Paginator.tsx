@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 import { PaginationButton } from "./utils/configPaginationButtons";
 import { calculatePagination } from "./utils/calculatePagination";
-import { nanoid } from "nanoid";
+// import { nanoid } from "nanoid";
 import { BUTTON_TYPE } from "./utils/configPaginationButtons";
 
 interface IPaginatorProps {
@@ -37,8 +37,8 @@ const Paginator: FC<IPaginatorProps> = ({
   return (
     !isEmpty && (
       <ul className="paginator-list">
-        {paginatorList.map(({ title, value, type, Icon }) => (
-          <li key={nanoid(5)} className="paginator-list-item group">
+        {paginatorList.map(({ title, value, type, Icon }, i) => (
+          <li key={i} className="paginator-list-item group">
             <Link
               className={`paginator-page-link group-hover:text-accent-red ${
                 type === BUTTON_TYPE.CURRENT && "font-bold"
