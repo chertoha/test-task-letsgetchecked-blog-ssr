@@ -2,17 +2,10 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Post from "./Post";
 import { PostType } from "@/types/entities";
+import { mockPost } from "@/utils/mockData/post";
 
 describe("Post Component", () => {
-  const data: PostType = {
-    id: 123,
-    description: "Description",
-    slug: "test-comment",
-    title: "Test Title",
-    publish_date: "2023-01-01",
-    author: "Test Author",
-    content: "<p>Test content</p>",
-  };
+  const data: PostType = mockPost;
 
   it("Renders the title, publish_date, and author correctly", () => {
     render(<Post data={data} />);
