@@ -10,9 +10,36 @@ import { BsArrowLeft } from "react-icons/bs";
 import Post from "@/components/Post";
 import CommentList from "@/components/CommentList";
 import CreateCommentForm from "@/components/CreateCommentForm";
+import { Metadata } from "next";
+import { ResponseError } from "@/helpers/responseErrors";
 
 interface IProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: IProps): Promise<Metadata> {
+  try {
+    const { slug } = await params;
+
+    const response = await basicFetch<PostType[]>(`/posts`, {
+      params: {
+        slug,
+      },
+    });
+
+    return {
+      title: response?.data[0].title || "Post",
+      description: response?.data[0].description || "Blog post information",
+    };
+  } catch (error) {
+    return error instanceof ResponseError && error.response.status === 404
+      ? {
+          title: `Post`,
+        }
+      : {
+          title: "Something went wrong!",
+        };
+  }
 }
 
 const PostPage: FC<IProps> = async ({ params }) => {
