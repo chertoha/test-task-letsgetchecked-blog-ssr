@@ -31,6 +31,12 @@ jest.mock("../../../helpers/basicFetch", () => ({
   ),
 }));
 
+jest.mock("next/headers", () => ({
+  headers: jest.fn(() => ({
+    get: jest.fn(() => "http://localhost/previous-page"),
+  })),
+}));
+
 describe("Post page", () => {
   it("Renders back link, comments heading", async () => {
     const params = Promise.resolve({ slug: "test-post" });
@@ -45,7 +51,7 @@ describe("Post page", () => {
 
     const backLink = screen.getByRole("link", { name: /Back to home page/i });
     expect(backLink).toBeInTheDocument();
-    expect(backLink).toHaveAttribute("href", "/");
+    expect(backLink).toHaveAttribute("href", "http://localhost/previous-page");
 
     const commentsHeading = await screen.findByRole("heading", { level: 2, name: /Comments/ });
     expect(commentsHeading).toBeInTheDocument();
