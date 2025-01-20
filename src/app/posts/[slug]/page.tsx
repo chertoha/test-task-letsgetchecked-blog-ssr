@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Metadata } from "next";
+import { headers } from "next/headers";
 
 import Container from "@/components/Container";
 import Post from "@/components/Post";
@@ -45,6 +46,8 @@ export async function generateMetadata({ params }: IProps): Promise<Metadata> {
 
 const PostPage: FC<IProps> = async ({ params }) => {
   const { slug } = await params;
+  const headersList = await headers();
+  const referer = headersList.get("referer");
 
   const response = await basicFetch<PostType[]>(`/posts`, {
     params: {
@@ -58,9 +61,9 @@ const PostPage: FC<IProps> = async ({ params }) => {
 
   return (
     <Container>
-      <BackLink href={ROUTES.HOME} />
+      <BackLink href={referer || ROUTES.HOME} />
 
-      <section>
+      <section className="max-w-[1200px] mx-auto">
         <Post data={data} />
 
         <div className="mt-10">

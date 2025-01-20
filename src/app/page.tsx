@@ -21,7 +21,7 @@ const Home: FC<IProps> = async ({ searchParams }) => {
       _page: page,
       _limit: API_REQUEST_DEFAULT_LIMIT,
       _sort: "publish_date",
-      _order: "asc",
+      _order: "desc",
     },
   });
 
