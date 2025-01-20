@@ -1,18 +1,14 @@
 "use server";
 
 import { basicFetch } from "@/helpers/basicFetch";
+import { BaseActionResponse } from "@/types/actions";
 import { CreateCommentFormValues } from "@/types/forms";
 import { revalidateTag } from "next/cache";
-
-export type CreateCommentAction = {
-  status: "success" | "error";
-  message: string;
-};
 
 export const createCommentAction = async (
   id: number,
   data: CreateCommentFormValues,
-): Promise<CreateCommentAction> => {
+): Promise<BaseActionResponse> => {
   try {
     await basicFetch(`/posts/${id}/comments`, {
       method: "POST",

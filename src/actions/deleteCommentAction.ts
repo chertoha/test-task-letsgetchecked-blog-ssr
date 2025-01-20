@@ -1,14 +1,10 @@
 "use server";
 
 import { basicFetch } from "@/helpers/basicFetch";
+import { BaseActionResponse } from "@/types/actions";
 import { revalidateTag } from "next/cache";
 
-export type DeleteCommentAction = {
-  status: "success" | "error";
-  message: string;
-};
-
-export const deleteCommentAction = async (id: number): Promise<DeleteCommentAction> => {
+export const deleteCommentAction = async (id: number): Promise<BaseActionResponse> => {
   try {
     await basicFetch(`/comments/${id}`, {
       method: "DELETE",
