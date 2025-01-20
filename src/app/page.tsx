@@ -30,9 +30,9 @@ const Home: FC<IProps> = async ({ searchParams }) => {
   return (
     <>
       <Container>
-        <h1>Home</h1>
+        <h1 className="text-center text-4xl font-bold">Blog posts</h1>
 
-        <section>
+        <section className="py-10">
           {response?.data && (
             <>
               <PostList list={response.data} />

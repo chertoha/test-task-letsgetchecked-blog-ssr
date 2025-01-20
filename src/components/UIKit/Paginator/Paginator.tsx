@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FC } from "react";
 import { PaginationButton } from "./utils/configPaginationButtons";
 import { calculatePagination } from "./utils/calculatePagination";
-// import { nanoid } from "nanoid";
 import { BUTTON_TYPE } from "./utils/configPaginationButtons";
 
 interface IPaginatorProps {
