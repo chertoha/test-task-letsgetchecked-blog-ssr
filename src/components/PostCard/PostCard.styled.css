@@ -1,5 +1,5 @@
 .post-card-article {
-  @apply border-b border-gray-300 py-5 max-w-[1000px] mx-auto;
+  @apply border-b border-gray-300 py-5 mx-auto;
 }
 
 .post-card-article-header {

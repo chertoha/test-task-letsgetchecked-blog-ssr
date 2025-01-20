@@ -37,7 +37,9 @@ const Home: FC<IProps> = async ({ searchParams }) => {
         <section className="py-10">
           {response?.data && (
             <>
-              <PostList list={response.data} />
+              <div className="max-w-[800px] mx-auto">
+                <PostList list={response.data} />
+              </div>
 
               <div className="mt-10">
                 <Paginator
