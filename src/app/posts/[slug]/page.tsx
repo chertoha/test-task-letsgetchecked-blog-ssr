@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Metadata } from "next";
-import { headers } from "next/headers";
 
 import Container from "@/components/Container";
 import Post from "@/components/Post";
