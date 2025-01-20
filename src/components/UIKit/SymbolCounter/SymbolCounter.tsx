@@ -20,7 +20,10 @@ const SymbolCounter: FC<IProps> = ({ children, symbolsNum, maxSymbols = 200 }) =
       {children}
 
       {isClient && (
-        <span className="absolute text-xs top-full right-0 text-gray-400">
+        <span
+          className="absolute text-xs top-full right-0 text-gray-400"
+          data-testid="symbol-counter"
+        >
           <span className={symbolsNum <= maxSymbols ? "text-gray-400" : "text-red-500"}>
             {symbolsNum}
           </span>

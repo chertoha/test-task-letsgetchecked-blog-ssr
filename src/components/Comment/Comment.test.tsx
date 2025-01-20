@@ -1,6 +1,6 @@
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Comment from "./Comment";
-import { CommentType } from "@/types/entities";
 import { mockComment } from "@/utils/mockData/comment";
 
 jest.mock("../EditableComment", () => ({ content, commentId }: any) => (
@@ -9,28 +9,50 @@ jest.mock("../EditableComment", () => ({ content, commentId }: any) => (
   </div>
 ));
 
-jest.mock("@/utils/datetime", () => ({
+jest.mock("../../utils/datetime", () => ({
   dateToString: jest.fn((date: Date) => `Formatted ${date.toDateString()}`),
   isToday: jest.fn((date: Date) => date.toDateString() === new Date().toDateString()),
 }));
 
 describe("Comment component", () => {
-  it("Renders the comment details correctly", () => {
+  beforeEach(() => {
     render(<Comment comment={mockComment} />);
+  });
 
-    const user = screen.getByText(/John Doe/i);
+  it("Renders the comment details correctly", () => {
+    const user = screen.getByText(/User: John Doe/i);
+
     expect(user).toBeInTheDocument();
 
-    const time = screen.getByRole("time");
+    const time = screen.getByText(/Formatted/i);
     expect(time).toBeInTheDocument();
     expect(time).toHaveAttribute("datetime", new Date(mockComment.date).toISOString());
-
-    // expect(time).toHaveTextContent(/Formatted/i);
-
-    expect(screen.getByText(/Formatted/i)).toBeInTheDocument();
 
     const editableComment = screen.getByTestId("editable-comment");
     expect(editableComment).toHaveTextContent(mockComment.content);
     expect(editableComment).toHaveTextContent(String(mockComment.id));
+  });
+
+  it("Formats the date using dateToString", () => {
+    const dateToString = require("../../utils/datetime").dateToString;
+
+    expect(dateToString).toHaveBeenCalledWith(new Date(mockComment.date));
+  });
+
+  it("Checks if the date is today and formats time correctly", () => {
+    const isToday = require("../../utils/datetime").isToday;
+
+    expect(isToday).toHaveBeenCalledWith(new Date(mockComment.date));
+
+    if (isToday(new Date(mockComment.date))) {
+      const formattedTime = new Date(mockComment.date).toLocaleTimeString("en-IE", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      });
+
+      const time = screen.getByText(content => content.includes(formattedTime));
+      expect(time).toBeInTheDocument();
+    }
   });
 });
