@@ -26,8 +26,6 @@ const EditCommentForm: FC<IProps> = ({ commentId, initialValues, close }) => {
   const [isPending, startTransition] = useTransition();
 
   const onSubmitHandler = (values: EditCommentFormValues) => {
-    console.log(values);
-
     startTransition(() => {
       editCommentAction(commentId, values).then(response => {
         if (response.status === "error") {

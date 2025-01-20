@@ -7,7 +7,7 @@
 }
 
 .confirm-button {
-  @apply text-green-600 hover:scale-125 duration-300 transition-transform ease-in-out p-1;
+  @apply text-accent hover:scale-125 duration-300 transition-transform ease-in-out p-1;
 }
 
 .cancel-button {

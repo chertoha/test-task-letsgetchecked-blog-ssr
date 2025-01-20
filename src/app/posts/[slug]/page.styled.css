@@ -1,5 +1,5 @@
 .comments-heading {
-  @apply mb-4 text-green-600 font-bold;
+  @apply mb-4 text-accent font-bold;
 }
 
 .comments-wrapper {
@@ -7,7 +7,7 @@
 }
 
 .add-form-wrapper {
-  @apply flex-grow xl:border-l border-green-600/10 xl:pl-14 xl:pb-[100px] max-xl:mb-8;
+  @apply flex-grow xl:border-l border-accent/10 xl:pl-14 xl:pb-[100px] max-xl:mb-8;
 }
 
 .add-form-heading {

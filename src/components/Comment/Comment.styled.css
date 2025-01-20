@@ -1,5 +1,5 @@
 .comment-article {
-  @apply border-b border-green-600/10 pb-4;
+  @apply border-b border-accent/10 pb-4;
 }
 
 .comment-footer {

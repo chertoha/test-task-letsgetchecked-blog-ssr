@@ -1,5 +1,5 @@
 .post-heading {
-  @apply text-4xl font-bold  text-green-600;
+  @apply text-4xl font-bold  text-accent;
 }
 
 .post-date {

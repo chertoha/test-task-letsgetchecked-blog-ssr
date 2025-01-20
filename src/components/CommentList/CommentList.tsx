@@ -20,16 +20,16 @@ const CommentList: FC<IProps> = async ({ postId }) => {
 
   if (!response) return null;
 
-  return (
-    <>
-      <ul className="space-y-5">
-        {response.data.map(comment => (
-          <li key={comment.id}>
-            <Comment comment={comment} />
-          </li>
-        ))}
-      </ul>
-    </>
+  return response.data.length > 0 ? (
+    <ul className="space-y-5">
+      {response.data.map(comment => (
+        <li key={comment.id}>
+          <Comment comment={comment} />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p className="pt-10 italic text-accent">There are no comments yet.</p>
   );
 };
 

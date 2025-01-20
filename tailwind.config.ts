@@ -27,6 +27,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        accent: "#16a34a",
+        "hovered-accent": "#22c55e",
       },
     },
   },

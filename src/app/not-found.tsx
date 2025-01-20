@@ -13,7 +13,7 @@ const NotFound = () => {
             <p className="text-5xl text-center mt-6">Page 404</p>
             <Link
               href={ROUTES.HOME}
-              className="cancel mt-10 mx-auto text-xl text-green-600 border-green-600 hover:bg-green-600 py-2"
+              className="cancel mt-10 mx-auto text-xl text-accent border-accent hover:bg-accent py-2"
             >
               Go to Home Page
             </Link>
