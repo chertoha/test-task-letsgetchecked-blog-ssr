@@ -11,7 +11,7 @@ interface IProps {
 
 const BackLink: FC<IProps> = ({ href }) => {
   return (
-    <Link href={href} className="link" aria-label="Back to home page">
+    <Link href={href} className="backlink" aria-label="Back to home page">
       <BsArrowLeft size={20} />
     </Link>
   );

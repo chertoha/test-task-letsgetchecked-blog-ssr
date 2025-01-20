@@ -1,0 +1,11 @@
+.comment-article {
+  @apply border-b border-green-600/10 pb-4;
+}
+
+.comment-footer {
+  @apply flex items-center text-gray-400 gap-3;
+}
+
+.comment-content-wrapper {
+  @apply xs:flex  gap-4 justify-between items-start mt-1;
+}

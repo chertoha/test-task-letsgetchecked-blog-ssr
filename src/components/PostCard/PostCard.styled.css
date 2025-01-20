@@ -1,0 +1,31 @@
+.post-card-article {
+  @apply border-b border-gray-300 py-5 max-w-[1000px] mx-auto;
+}
+
+.post-card-article-header {
+  @apply flex justify-between items-center;
+}
+
+.post-card-date {
+  @apply text-gray-400 text-sm;
+}
+
+.post-card-author {
+  @apply text-gray-800 text-sm underline;
+}
+
+.post-card-title {
+  @apply text-2xl font-bold mt-4;
+}
+
+.post-card-description {
+  @apply pt-3 text-gray-500 max-h-[60px];
+}
+
+.post-card-link-wrapper {
+  @apply mt-8 flex justify-end;
+}
+
+.post-card-link {
+  @apply max-[400px]:w-full;
+}

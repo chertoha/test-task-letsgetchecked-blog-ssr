@@ -1,0 +1,11 @@
+.field-wrapper {
+  @apply relative h-full;
+}
+
+.field-area {
+  @apply block h-full resize-none;
+}
+
+.field-error {
+  @apply absolute top-full left-0 text-red-500 text-xs pl-2;
+}

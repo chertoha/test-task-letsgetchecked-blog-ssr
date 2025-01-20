@@ -1,0 +1,15 @@
+.post-heading {
+  @apply text-4xl font-bold  text-green-600;
+}
+
+.post-date {
+  @apply block text-gray-400 mt-4;
+}
+
+.post-author-wrapper {
+  @apply mt-2 text-gray-500;
+}
+
+.post-author {
+  @apply text-gray-600 font-bold;
+}

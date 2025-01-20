@@ -1,8 +1,9 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+
 import PostCard from "./PostCard";
-import { mockPost } from "@/utils/mockData/post";
 import ROUTES from "@/config/routes";
+import { mockPost } from "@/utils/mockData/post";
 
 describe("PostCard Component", () => {
   const data = mockPost;

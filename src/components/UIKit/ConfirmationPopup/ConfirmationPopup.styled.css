@@ -1,0 +1,11 @@
+.confirm-popup-title {
+  @apply text-lg text-center font-bold;
+}
+
+.confirm-popup-description {
+  @apply mt-8 text-center;
+}
+
+.confirm-popup-button-wrapper {
+  @apply flex items-center justify-end gap-5 mt-10;
+}

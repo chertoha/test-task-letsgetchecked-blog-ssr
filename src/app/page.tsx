@@ -1,11 +1,13 @@
+import { FC } from "react";
+
 import Container from "@/components/Container";
 import PostList from "@/components/PostList";
 import Paginator from "@/components/UIKit/Paginator";
-import { API_REQUEST_DEFAULT_LIMIT, API_REQUEST_DEFAULT_PAGE } from "@/config/api";
 import ROUTES from "@/config/routes";
+
+import { API_REQUEST_DEFAULT_LIMIT, API_REQUEST_DEFAULT_PAGE } from "@/config/api";
 import { basicFetch } from "@/helpers/basicFetch";
 import { PostType } from "@/types/entities";
-import { FC } from "react";
 
 interface IProps {
   searchParams: Promise<{ page: string | undefined }>;

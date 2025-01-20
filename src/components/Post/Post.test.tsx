@@ -1,6 +1,8 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+
 import Post from "./Post";
+
 import { PostType } from "@/types/entities";
 import { mockPost } from "@/utils/mockData/post";
 

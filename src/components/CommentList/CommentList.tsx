@@ -1,7 +1,9 @@
+import { FC } from "react";
+
+import Comment from "../Comment/Comment";
+
 import { basicFetch } from "@/helpers/basicFetch";
 import { CommentType } from "@/types/entities";
-import { FC } from "react";
-import Comment from "../Comment/Comment";
 
 interface IProps {
   postId: number;

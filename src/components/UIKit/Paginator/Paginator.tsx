@@ -1,9 +1,11 @@
-import "./Paginator.style.css";
 import Link from "next/link";
 import { FC } from "react";
+
 import { PaginationButton } from "./utils/configPaginationButtons";
 import { calculatePagination } from "./utils/calculatePagination";
 import { BUTTON_TYPE } from "./utils/configPaginationButtons";
+
+import "./Paginator.style.css";
 
 interface IPaginatorProps {
   totalItems: number;

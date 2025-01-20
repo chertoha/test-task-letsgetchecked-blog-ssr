@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+
 import Comment from "./Comment";
 import { mockComment } from "@/utils/mockData/comment";
 
@@ -42,14 +43,10 @@ describe("Comment component", () => {
   });
 
   it("Formats the date using dateToString", () => {
-    // const dateToString = require("../../utils/datetime").dateToString;
-
     expect(dateToString).toHaveBeenCalledWith(new Date(mockComment.date));
   });
 
   it("Checks if the date is today and formats time correctly", () => {
-    // const isToday = require("../../utils/datetime").isToday;
-
     expect(isToday).toHaveBeenCalledWith(new Date(mockComment.date));
 
     if (isToday(new Date(mockComment.date))) {

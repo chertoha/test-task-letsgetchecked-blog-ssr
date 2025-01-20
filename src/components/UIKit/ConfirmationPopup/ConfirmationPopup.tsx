@@ -1,5 +1,7 @@
 import { FC, ReactNode } from "react";
 
+import "./ConfirmationPopup.styled.css";
+
 interface IProps {
   onConfirm: () => void;
   onReject: () => void;
@@ -19,10 +21,10 @@ const ConfirmationPopup: FC<IProps> = ({
 }) => {
   return (
     <div>
-      <h2 className="text-lg text-center font-bold">{title}</h2>
-      <p className="mt-8 text-center">{description}</p>
+      <h2 className="confirm-popup-title">{title}</h2>
+      <p className="confirm-popup-description">{description}</p>
 
-      <div className="flex items-center justify-end gap-5 mt-10">
+      <div className="confirm-popup-button-wrapper">
         {rejectButtonElement || (
           <button type="button" className="cancel py-[2px]" onClick={onReject}>
             Cancel

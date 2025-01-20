@@ -1,16 +1,20 @@
 "use client";
 
-import { Formik, FormikHelpers } from "formik";
-import SymbolCounter from "../UIKit/SymbolCounter";
-import { createCommentFormValidationSchema } from "@/utils/validationSchemas";
-import Field from "../UIKit/Field";
-import { CreateCommentFormValues } from "@/types/forms";
 import { FC, useTransition } from "react";
-import { createCommentAction } from "@/actions/createCommentAction";
-import { SessionStorage } from "@/services/storage";
+import { Formik, FormikHelpers } from "formik";
+
+import SymbolCounter from "../UIKit/SymbolCounter";
+import Field from "../UIKit/Field";
 import FormPersistor from "./FormPersistor";
 import Loader from "../UIKit/Loader";
+
+import { createCommentFormValidationSchema } from "@/utils/validationSchemas";
+import { CreateCommentFormValues } from "@/types/forms";
+import { createCommentAction } from "@/actions/createCommentAction";
+import { SessionStorage } from "@/services/storage";
 import { COMMENT_CONTENT_MAX_LENGTH, COMMENT_USER_NAME_MAX_LENGTH } from "@/config/constants";
+
+import "./CreateCommentForm.styled.css";
 
 const initialValues: CreateCommentFormValues = {
   user: "",
@@ -73,11 +77,7 @@ const CreateCommentForm: FC<IProps> = ({ postId }) => {
               </SymbolCounter>
             </div>
 
-            <button
-              type="submit"
-              className="submit mt-8 max-md:w-full w-[120px] h-[37px] disabled:bg-slate-300"
-              disabled={isPending}
-            >
+            <button type="submit" className="submit create-comment-submit" disabled={isPending}>
               {isPending ? <Loader size={18} color="#ffffff" /> : <>Send</>}
             </button>
           </form>
