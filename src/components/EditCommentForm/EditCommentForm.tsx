@@ -58,7 +58,7 @@ const EditCommentForm: FC<IProps> = ({ commentId, initialValues, close }) => {
                 <Loader size={17} />
               </div>
             ) : (
-              <div className="flex pl-3">
+              <div className="flex pl-3 mt-3 ">
                 <button
                   type="submit"
                   className="text-green-600 hover:scale-125 duration-300 transition-transform ease-in-out p-1"
