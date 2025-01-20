@@ -32,7 +32,7 @@ const Home: FC<IProps> = async ({ searchParams }) => {
   return (
     <>
       <Container>
-        <h1 className="text-center text-4xl font-bold">Blog posts</h1>
+        <h1 className="text-center text-4xl font-bold text-accent">Blog posts</h1>
 
         <section className="py-10">
           {response?.data && (
