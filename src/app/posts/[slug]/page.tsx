@@ -46,8 +46,6 @@ export async function generateMetadata({ params }: IProps): Promise<Metadata> {
 
 const PostPage: FC<IProps> = async ({ params }) => {
   const { slug } = await params;
-  const headersList = await headers();
-  const referer = headersList.get("referer");
 
   const response = await basicFetch<PostType[]>(`/posts`, {
     params: {
@@ -61,7 +59,7 @@ const PostPage: FC<IProps> = async ({ params }) => {
 
   return (
     <Container>
-      <BackLink href={referer || ROUTES.HOME} />
+      <BackLink href={ROUTES.HOME} />
 
       <section className="max-w-[1200px] mx-auto">
         <Post data={data} />
