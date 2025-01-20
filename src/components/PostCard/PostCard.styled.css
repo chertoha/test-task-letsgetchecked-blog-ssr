@@ -27,5 +27,5 @@
 }
 
 .post-card-link {
-  @apply max-[400px]:w-full;
+  @apply max-[400px]:w-full py-2 md:py-[6px];
 }
