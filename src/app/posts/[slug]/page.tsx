@@ -1,17 +1,18 @@
 import { FC } from "react";
+import { Metadata } from "next";
 
 import Container from "@/components/Container";
-
-import { basicFetch } from "@/helpers/basicFetch";
-import { PostType } from "@/types/entities";
-import Link from "next/link";
-import ROUTES from "@/config/routes";
-import { BsArrowLeft } from "react-icons/bs";
 import Post from "@/components/Post";
 import CommentList from "@/components/CommentList";
 import CreateCommentForm from "@/components/CreateCommentForm";
-import { Metadata } from "next";
+import BackLink from "@/components/UIKit/BackLink";
+import ROUTES from "@/config/routes";
+
+import { basicFetch } from "@/helpers/basicFetch";
+import { PostType } from "@/types/entities";
 import { ResponseError } from "@/helpers/responseErrors";
+
+import "./page.styled.css";
 
 interface IProps {
   params: Promise<{ slug: string }>;
@@ -57,28 +58,22 @@ const PostPage: FC<IProps> = async ({ params }) => {
 
   return (
     <Container>
-      <Link
-        href={ROUTES.HOME}
-        className="inline-block mb-6 hover:text-green-600 transition-colors duration-300 ease-in-out p-2"
-        aria-label="Back to home page"
-      >
-        <BsArrowLeft size={20} />
-      </Link>
+      <BackLink href={ROUTES.HOME} />
 
       <section>
         <Post data={data} />
 
         <div className="mt-10">
-          <h2 className="mb-4 text-green-600 font-bold">Comments:</h2>
+          <h2 className="comments-heading">Comments:</h2>
 
-          <div className="mb-4 xl:flex flex-row-reverse items-start gap-[90px]">
-            <aside className="flex-grow xl:border-l border-green-600/10 xl:pl-14 xl:pb-[100px] max-xl:mb-8">
-              <h3 className="text-md text-gray-500 mb-3">Add comment:</h3>
+          <div className="comments-wrapper">
+            <aside className="add-form-wrapper">
+              <h3 className="add-form-heading">Add comment:</h3>
 
               <CreateCommentForm postId={data.id} />
             </aside>
 
-            <div className="md:w-[600px] shrink-0">
+            <div className="comment-list-wrapper">
               <CommentList postId={data.id} />
             </div>
           </div>

@@ -1,7 +1,8 @@
 import "@testing-library/jest-dom";
 import { act, render, screen } from "@testing-library/react";
-import Page from "./page";
 import { Suspense } from "react";
+
+import Page from "./page";
 import { mockPost } from "@/utils/mockData/post";
 
 jest.mock("../helpers/basicFetch", () => ({

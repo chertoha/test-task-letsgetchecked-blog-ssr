@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { BUTTON_TYPE } from "./utils/configPaginationButtons";
+
 import Paginator from "./Paginator";
 
 jest.mock("./utils/calculatePagination", () => ({

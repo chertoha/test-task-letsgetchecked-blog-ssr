@@ -1,18 +1,14 @@
 "use server";
 
 import { basicFetch } from "@/helpers/basicFetch";
+import { BaseActionResponse } from "@/types/actions";
 import { EditCommentFormValues } from "@/types/forms";
 import { revalidateTag } from "next/cache";
-
-export type EditCommentAction = {
-  status: "success" | "error";
-  message: string;
-};
 
 export const editCommentAction = async (
   id: number,
   data: EditCommentFormValues,
-): Promise<EditCommentAction> => {
+): Promise<BaseActionResponse> => {
   try {
     await basicFetch(`/comments/${id}`, {
       method: "PATCH",

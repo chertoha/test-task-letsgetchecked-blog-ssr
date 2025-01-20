@@ -1,0 +1,19 @@
+.comments-heading {
+  @apply mb-4 text-accent font-bold;
+}
+
+.comments-wrapper {
+  @apply mb-4 xl:flex flex-row-reverse items-start gap-[90px];
+}
+
+.add-form-wrapper {
+  @apply flex-grow xl:border-l border-accent/10 xl:pl-14 xl:pb-[100px] max-xl:mb-8;
+}
+
+.add-form-heading {
+  @apply text-gray-500 mb-3;
+}
+
+.comment-list-wrapper {
+  @apply md:w-[600px] shrink-0;
+}

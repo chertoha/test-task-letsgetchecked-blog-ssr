@@ -1,8 +1,9 @@
 import "@testing-library/jest-dom";
 import { act, fireEvent, render, screen } from "@testing-library/react";
-import { Form, Formik } from "formik";
-import Field from "./Field";
 import { ReactNode } from "react";
+import { Form, Formik } from "formik";
+
+import Field from "./Field";
 
 const mockValidate = (values: any) => {
   const errors: Record<string, string> = {};

@@ -1,0 +1,15 @@
+.content-field-wrapper {
+  @apply [&>div]:h-[80px] [&>div>textarea]:border-none [&>div>textarea]:bg-transparent;
+}
+
+.toolbar-wrapper {
+  @apply flex pl-3 mt-3;
+}
+
+.confirm-button {
+  @apply text-accent hover:scale-125 duration-300 transition-transform ease-in-out p-1;
+}
+
+.cancel-button {
+  @apply text-red-600 hover:scale-125 duration-300 transition-transform ease-in-out p-1;
+}

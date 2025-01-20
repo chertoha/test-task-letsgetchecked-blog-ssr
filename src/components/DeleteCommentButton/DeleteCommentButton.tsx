@@ -1,11 +1,13 @@
-import useModal from "@/hooks/useModal";
 import { FC, useTransition } from "react";
 import { MdDeleteOutline } from "react-icons/md";
+
+import useModal from "@/hooks/useModal";
 import ClientPortal from "../ClientPortal";
 import Modal from "../UIKit/Modal";
 import ConfirmationPopup from "../UIKit/ConfirmationPopup";
-import { deleteCommentAction } from "@/actions/deleteCommentAction";
 import Loader from "../UIKit/Loader";
+
+import { deleteCommentAction } from "@/actions/deleteCommentAction";
 
 interface IProps {
   commentId: number;

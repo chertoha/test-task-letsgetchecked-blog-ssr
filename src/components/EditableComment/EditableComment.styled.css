@@ -1,0 +1,7 @@
+.editable-comment-content {
+  @apply break-words max-w-[82%] md:max-w-[536px];
+}
+
+.edit-button-wrapper {
+  @apply flex items-center max-xs:gap-3 max-xs:mt-3 w-12 shrink-0;
+}
