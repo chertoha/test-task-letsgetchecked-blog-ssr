@@ -25,7 +25,8 @@ describe("DeleteCommentButton component", () => {
   });
 
   it("opens the modal when the delete button is clicked", () => {
-    const useModalMock = require("../../hooks/useModal").default;
+    const useModalMock = jest.mocked(jest.requireMock("../../hooks/useModal").default);
+
     const { open } = useModalMock();
 
     render(<DeleteCommentButton commentId={1} />);

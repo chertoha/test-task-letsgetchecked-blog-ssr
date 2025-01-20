@@ -16,7 +16,12 @@ describe("Paginator Component", () => {
       { title: "1", value: 1, type: BUTTON_TYPE.CURRENT, Icon: null },
       { title: "2", value: 2, type: BUTTON_TYPE.DEFAULT, Icon: null },
     ];
-    require("./utils/calculatePagination").calculatePagination.mockReturnValue(mockPagination);
+
+    jest.mocked(
+      jest
+        .requireMock("./utils/calculatePagination")
+        .calculatePagination.mockReturnValue(mockPagination),
+    );
 
     render(
       <Paginator

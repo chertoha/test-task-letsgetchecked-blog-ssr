@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+
 import EditCommentForm from "./EditCommentForm";
 import { mockComment } from "@/utils/mockData/comment";
 
@@ -11,11 +12,14 @@ jest.mock("../../actions/editCommentAction", () => ({
   editCommentAction: jest.fn().mockResolvedValue({ status: "success" }),
 }));
 
-jest.mock("../UIKit/Field", () => ({ name }: any) => (
-  <textarea data-testid="field" name={name}>
-    {initialValues.content}
-  </textarea>
-));
+jest.mock("../UIKit/Field", () => {
+  const MockField = ({ name }: any) => (
+    <textarea data-testid="field" name={name} defaultValue={initialValues.content}></textarea>
+  );
+
+  MockField.displayName = " Field";
+  return MockField;
+});
 
 describe("EditCommentForm component", () => {
   const mockClose = jest.fn();
@@ -41,7 +45,8 @@ describe("EditCommentForm component", () => {
   });
 
   it("Calls editCommentAction on form submission", async () => {
-    const action = require("../../actions/editCommentAction");
+    const action = jest.mocked(jest.requireMock("../../actions/editCommentAction"));
+
     const { editCommentAction } = action;
 
     const submitButton = screen.getByRole("button", { name: /Confirm comment update/i });

@@ -5,9 +5,23 @@ import { Suspense } from "react";
 import PostPage from "./page";
 import { mockPost } from "@/utils/mockData/post";
 
-jest.mock("../../../components/Post", () => () => <div>Mock Post</div>);
-jest.mock("../../../components/CommentList", () => () => <div>Mock CommentList</div>);
-jest.mock("../../../components/CreateCommentForm", () => () => <div>Mock CreateCommentForm</div>);
+jest.mock("../../../components/Post", () => {
+  const MockPost = () => <div>Mock Post</div>;
+  MockPost.displayName = "Post";
+  return MockPost;
+});
+
+jest.mock("../../../components/CommentList", () => {
+  const MockCommentList = () => <div>Mock CommentList</div>;
+  MockCommentList.displayName = "CommentList";
+  return MockCommentList;
+});
+
+jest.mock("../../../components/CreateCommentForm", () => {
+  const MockCreateCommentForm = () => <div>Mock CreateCommentForm</div>;
+  MockCreateCommentForm.displayName = "CreateCommentForm";
+  return MockCreateCommentForm;
+});
 
 jest.mock("../../../helpers/basicFetch", () => ({
   basicFetch: jest.fn(() =>

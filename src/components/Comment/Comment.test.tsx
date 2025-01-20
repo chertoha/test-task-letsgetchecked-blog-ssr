@@ -3,16 +3,24 @@ import { render, screen } from "@testing-library/react";
 import Comment from "./Comment";
 import { mockComment } from "@/utils/mockData/comment";
 
-jest.mock("../EditableComment", () => ({ content, commentId }: any) => (
-  <div data-testid="editable-comment">
-    Mock EditableComment: {content} - {commentId}
-  </div>
-));
+jest.mock("../EditableComment", () => {
+  const MockEditableComment = ({ content, commentId }: any) => (
+    <div data-testid="editable-comment">
+      Mock EditableComment: {content} - {commentId}
+    </div>
+  );
+
+  MockEditableComment.displayName = "EditableComment";
+
+  return MockEditableComment;
+});
 
 jest.mock("../../utils/datetime", () => ({
   dateToString: jest.fn((date: Date) => `Formatted ${date.toDateString()}`),
   isToday: jest.fn((date: Date) => date.toDateString() === new Date().toDateString()),
 }));
+
+import { dateToString, isToday } from "../../utils/datetime";
 
 describe("Comment component", () => {
   beforeEach(() => {
@@ -34,13 +42,13 @@ describe("Comment component", () => {
   });
 
   it("Formats the date using dateToString", () => {
-    const dateToString = require("../../utils/datetime").dateToString;
+    // const dateToString = require("../../utils/datetime").dateToString;
 
     expect(dateToString).toHaveBeenCalledWith(new Date(mockComment.date));
   });
 
   it("Checks if the date is today and formats time correctly", () => {
-    const isToday = require("../../utils/datetime").isToday;
+    // const isToday = require("../../utils/datetime").isToday;
 
     expect(isToday).toHaveBeenCalledWith(new Date(mockComment.date));
 
