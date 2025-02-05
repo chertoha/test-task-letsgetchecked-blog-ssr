@@ -31,6 +31,12 @@ interface IProps {
 }
 
 const CreateCommentForm: FC<IProps> = ({ postId }) => {
+
+  const storage =
+  typeof window !== "undefined"
+    ? new SessionStorage<CreateCommentFormValues>(`comment_form_values_${postId}`)
+    : null;
+
   const [isPending, startTransition] = useTransition();
 
   const onSubmitHandler = (
