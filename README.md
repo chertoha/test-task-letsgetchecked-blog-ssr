@@ -25,6 +25,12 @@ API_URL: Used for server-side requests within Next.js.
 ## Install required dependencies:
 ```bash
 npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
 ```
 
 ## Run the development server:
